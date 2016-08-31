@@ -1,0 +1,5 @@
+/packages
+.vs
+/LineLiveDownloader/bin
+/LineLiveDownloader/obj
+ffmpeg.exe

@@ -1,0 +1,40 @@
+﻿<Window x:Class="LineLiveDownloader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LineLiveDownloader"
+        mc:Ignorable="d"
+        Title="How to get stream from LINE Live?" Height="600" Width="900" Loaded="Window_Loaded" Icon="liveld.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="UrlTl1" Content="URL: https://live.line.me/r/channels/" HorizontalAlignment="Left" Margin="10,28,0,0" VerticalAlignment="Top"/>
+        <TextBox Grid.Row="0" x:Name="ChannelIdBox" HorizontalAlignment="Left" Height="23" Margin="224,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="21"/>
+        <Label Grid.Row="0" x:Name="ChannelTl1" Content="Channel ID:" HorizontalAlignment="Left" Margin="232,10,0,0" VerticalAlignment="Top"/>
+        <Label Grid.Row="0" x:Name="UrlTl2" Content="/broadcast/" HorizontalAlignment="Left" Margin="340,28,0,0" VerticalAlignment="Top"/>
+        <TextBox Grid.Row="0" x:Name="BroadcastIdBox" HorizontalAlignment="Left" Height="23" Margin="414,32,0,0" TextWrapping="Wrap" Text="26531" VerticalAlignment="Top" Width="120"/>
+        <Label Grid.Row="0" x:Name="ChannelTl2" Content="Broadcast ID:" HorizontalAlignment="Left" Margin="429,10,0,0" VerticalAlignment="Top"/>
+        <Label Grid.Row="0" x:Name="SavepathBox" Content="Save Path" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="SavePathBox" HorizontalAlignment="Left" Height="23" Margin="81,62,0,0" Text="{}{cid}-{bid}-{Y}-{M}-{d}-{H}-{m}-{s}.mp4" VerticalAlignment="Top" Width="369"/>
+        <Button x:Name="OpenSaveDlgBtn" Content="Browse..." HorizontalAlignment="Left" Margin="459,61,0,0" VerticalAlignment="Top" Width="75" Height="24" RenderTransformOrigin="0.586,2.077" Click="OpenSaveDlgBtn_Click"/>
+        <TextBox x:Name="InfoBox" Margin="10,10,10,10" Grid.Row="1" TextWrapping="Wrap" TextChanged="InfoBox_TextChanged"/>
+        <Button x:Name="StartBtn" Content="Start" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top" Width="159" Height="75" FontSize="36" Click="StartBtn_Click"/>
+        <GroupBox Grid.Row="0" x:Name="ProgramInfo" Header="Program Infomation" Margin="550,14,10,10" Visibility="Hidden">
+            <Canvas Margin="0,0,0,0">
+                <StackPanel>
+                    <Label x:Name="ChannelIdLabel" Content="Channel ID: "/>
+                    <Label x:Name="BroadCastIdLabel" Content="BroadCast ID: "/>
+                    <Label x:Name="ChannelNameLabel" Content="Channel Name: "/>
+                    <Label x:Name="TitleLabel" Content="Title: "/>
+                    <Label x:Name="StatusLabel" Content="Status: "/>
+                    <Label x:Name="ArchiveStatusLabel" Content="Archive Status: "/>
+                </StackPanel>
+            </Canvas>
+        </GroupBox>
+        <Label x:Name="AboutBtn" Content="About..." HorizontalAlignment="Left" Margin="10,251,0,0" VerticalAlignment="Top" Foreground="#FF418BE4" Cursor="Hand" MouseLeftButtonUp="AboutBtn_MouseLeftButtonUp"/>
+
+    </Grid>
+</Window>
